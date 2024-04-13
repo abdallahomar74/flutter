@@ -8,7 +8,6 @@ void main() {
     debugShowCheckedModeBanner: false,
     home: login_page(),
   );
-  
 
    runApp(MyApp);
 }
