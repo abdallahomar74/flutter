@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:section_project/core/custom_textfield.dart';
-import 'package:section_project/features/forgit_pass1/view/page/forget_pass1_page.dart';
+
 
 
 // ignore: camel_case_types
@@ -52,9 +52,8 @@ class body_login extends StatelessWidget {
             children: [
               const SizedBox(width: 13,),
               TextButton(onPressed: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                  return const forget_pass1_page();
-                },));
+               Navigator.pushNamed(context, 'forgetpass1');
+                
               }, child: const Text('forget password?',style: TextStyle(
                 color: Colors.blue,
                 fontSize: 17,

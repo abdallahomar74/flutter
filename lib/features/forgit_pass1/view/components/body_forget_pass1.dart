@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:section_project/core/custom_textfield.dart';
-import 'package:section_project/features/forget_pass2/view/page/forget_pass2_page.dart';
+
 
 // ignore: camel_case_types
 class body_forget_pass1 extends StatelessWidget {
@@ -23,7 +23,7 @@ class body_forget_pass1 extends StatelessWidget {
           ),
          
          MaterialButton(onPressed: (){
-           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const forget_pass2_page(),));  
+           Navigator.pushNamed(context, 'forgetpass2');
           },
             color: Colors.greenAccent ,
             minWidth: 130,
