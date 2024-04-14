@@ -207,7 +207,6 @@ packages:
       sha256: a6e590c838b18133bb482a2745ad77c5bb7715fb0451209e1a7567d416678b8e
       url: "https://pub.dev"
     source: hosted
-<<<<<<< HEAD
     version: "1.9.1"
   nested:
     dependency: transitive
@@ -217,9 +216,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-=======
-    version: "1.10.0"
->>>>>>> d3b8de5f6a840b2295f6352c594408e1bde042a3
   path:
     dependency: transitive
     description:
@@ -228,7 +224,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
-<<<<<<< HEAD
   provider:
     dependency: transitive
     description:
@@ -237,24 +232,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.2"
-=======
-  petitparser:
-    dependency: transitive
-    description:
-      name: petitparser
-      sha256: c15605cd28af66339f8eb6fbe0e541bfe2d1b72d5825efc6598f3e0a31b9ad27
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.2"
-  pointycastle:
-    dependency: transitive
-    description:
-      name: pointycastle
-      sha256: "70fe966348fe08c34bf929582f1d8247d9d9408130723206472b4687227e4333"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.8.0"
->>>>>>> d3b8de5f6a840b2295f6352c594408e1bde042a3
   sky_engine:
     dependency: transitive
     description: flutter
