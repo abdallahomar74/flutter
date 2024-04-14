@@ -14,9 +14,9 @@ void main() async{
     onGenerateRoute:Routes.onGenerateRoute ,
     onGenerateInitialRoutes:(_){return
       Routes.initroute;
-    } ,
+    },
   );
-
+// home: onBoarding? const login_page():const Onboarding_page(),
    runApp(MyApp);
   
 }

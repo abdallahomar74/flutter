@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:section_project/features/forget_pass2/view/page/forget_pass2_page.dart';
 import 'package:section_project/features/forgit_pass1/view/page/forget_pass1_page.dart';
 import 'package:section_project/features/login/view/page/login_page.dart';
+import 'package:section_project/features/onboarding/view/page/onboarding_page.dart';
 import 'package:section_project/features/registration/view/page/registration_page.dart';
 import 'package:section_project/features/verification/view/page/verification_page.dart';
 
 class Routes {
  static List<Route> initroute = [
    MaterialPageRoute<dynamic>(builder: (BuildContext context) => const login_page(),),
-
+    MaterialPageRoute<dynamic>(builder: (BuildContext context) => const Onboarding_page(),), 
  ];
 
 
