@@ -1,6 +1,7 @@
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
-//import 'package:meta/meta.dart';
+
 
 part 'registration_state.dart';
 
@@ -12,8 +13,9 @@ class RegistrationCubit extends Cubit<RegistrationState> {
   TextEditingController password = TextEditingController();
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
-  void validationconfirm (){
+  void validationconfirm (BuildContext context){
     if(formkey.currentState!.validate()){
+      Navigator.pushNamed(context, 'login');
       
 
     }

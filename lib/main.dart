@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:section_project/features/login/view/page/login_page.dart';
+import 'package:section_project/core/routes.dart';
 
 void main() {
  
   // ignore: non_constant_identifier_names
-  MaterialApp MyApp =const MaterialApp(
+  MaterialApp MyApp = MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: login_page(),
+    onGenerateRoute:Routes.onGenerateRoute ,
+    onGenerateInitialRoutes:(_){return
+      Routes.initroute;
+    } ,
   );
 
    runApp(MyApp);
+  
 }
 
+
+ 
+  
