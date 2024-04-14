@@ -15,13 +15,26 @@ class body_login extends StatelessWidget {
           const SizedBox(height: 200,),
           Container(
             margin: const EdgeInsets.all(15),
-            child: custom_textfield(labelText: 'email', hintText: 'enter your email',icon: const Icon(Icons.mail),),
+            child: custom_textfield(
+              labelText: 'email',
+               hintText: 'enter your email',
+               icon: const Icon(Icons.mail),
+               controller: TextEditingController(),
+               format: const [],
+            )
           ),
     
           
           Container(
             margin: const EdgeInsets.all(15),
-            child: custom_textfield(labelText: 'password', hintText: 'enter your password',obscuer: true,icon: const Icon(Icons.lock),),
+            child: custom_textfield(
+              labelText: 'password',
+               hintText: 'enter your password',
+               obscuer: true,
+               icon: const Icon(Icons.lock),
+               controller: TextEditingController(),
+               format: const [],
+               ),
           ),
     
     

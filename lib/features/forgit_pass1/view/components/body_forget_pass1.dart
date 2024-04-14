@@ -13,7 +13,13 @@ class body_forget_pass1 extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.all(20),
-          child: custom_textfield(labelText: 'mail',hintText: 'enter your email',icon: const Icon(Icons.mail))
+          child: custom_textfield(
+            labelText: 'mail',
+            hintText: 'enter your email',
+            icon: const Icon(Icons.mail),
+            controller: TextEditingController(),
+            format: const [],
+            )
           ),
          
          MaterialButton(onPressed: (){

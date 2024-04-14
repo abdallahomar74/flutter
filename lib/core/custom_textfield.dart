@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:section_project/core/validation.dart';
 
 // ignore: camel_case_types, must_be_immutable
 class custom_textfield extends StatelessWidget {
    // ignore: use_key_in_widget_constructors
-   custom_textfield({ this.labelText, this.hintText, this.obscuer = false,required this.icon });
+   custom_textfield({ this.labelText,
+    this.hintText, this.obscuer = false,required this.icon ,required this.controller,required this.format});
   String? labelText;
   String? hintText;
   bool obscuer; 
   Icon icon ;
+  List<TextInputFormatter> format;
+  TextEditingController controller =TextEditingController();
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -40,9 +44,10 @@ class custom_textfield extends StatelessWidget {
       ),
       validator: validation().validat,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      controller:TextEditingController() ,
+      controller:controller ,
       obscureText: obscuer,
       obscuringCharacter: '&',
+      inputFormatters: format,
     );
   }
 }

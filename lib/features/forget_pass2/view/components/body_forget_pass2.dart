@@ -13,12 +13,25 @@ class body_forget_pass2 extends StatelessWidget {
       children: [
         Container(
           margin: const EdgeInsets.all(20),
-          child: custom_textfield(labelText:'new password',hintText:'enter new password',obscuer: true,icon: const Icon(Icons.lock))
+          child: custom_textfield(labelText:'new password',
+            hintText:'enter new password',
+            obscuer: true,
+            icon: const Icon(Icons.lock),
+            controller: TextEditingController(),
+            format: const [],
+            )
           ),
 
         Container(
           margin: const EdgeInsets.all(20),
-          child: custom_textfield(labelText:'new password',hintText:'confirm new password',obscuer: true,icon: const Icon(Icons.lock))
+          child: custom_textfield(
+            labelText:'new password',
+            hintText:'confirm new password',
+            obscuer: true,
+            icon: const Icon(Icons.lock),
+            controller: TextEditingController(),
+            format: const [],
+            )
           ),
 
          MaterialButton(onPressed: (){
