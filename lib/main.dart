@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:section_project/features/login/view/page/login_page.dart';
+import 'package:section_project/features/onboarding/view/page/onboarding_page.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
- 
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+ SharedPreferences sharedPreferences =await SharedPreferences.getInstance();
+ bool onBoarding = sharedPreferences.getBool('onboarding')??false;
   // ignore: non_constant_identifier_names
-  MaterialApp MyApp =const MaterialApp(
+  MaterialApp MyApp = MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: login_page(),
+    
+    home: onBoarding? const login_page():const Onboarding_page(),
   );
 
    runApp(MyApp);

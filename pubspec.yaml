@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_bloc: ^8.1.5 
   flutter_native_splash: ^2.3.11
+  shared_preferences: ^2.2.3
 
 
 dev_dependencies:
@@ -60,9 +61,13 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/7.png
+
+
 flutter_native_splash:
   color: "#FFFFFF"
-  image: "assets/images/7.png"
+  image: assets/images/
   # To add assets to your application, add an assets section, like this:
   #assets:
       #- assets/images
