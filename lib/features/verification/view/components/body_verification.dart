@@ -1,65 +1,83 @@
 import 'package:flutter/material.dart';
-import 'package:section_project/core/validation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:section_project/core/context_extention.dart';
+import 'package:section_project/features/verification/controller/cubit/verification_cubit.dart';
 
 // ignore: camel_case_types
 class body_verification extends StatelessWidget {
   const body_verification({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text('verify your email',style: TextStyle(
-          fontSize: 20,
-          color: Colors.blue
-        ),),
+    return BlocProvider(
+      create: (context) => VerificationCubit(),
+      child: BlocBuilder<VerificationCubit, VerificationState>(
+        builder: (context, state) {
+          final VerificationCubit cubit = context.read<VerificationCubit>();
+          return Scaffold(
+            appBar: AppBar(),
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Enter your code"),
+                PinCodeTextField(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  appContext: context,
+                  pastedTextStyle: const TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  length: 5,
+                  obscureText: true,
+                  obscuringCharacter: '*',
+                 
+                  blinkWhenObscuring: true,
+                  animationType: AnimationType.slide,
+                  validator: (v) {
+                    if (v!.length < 3) {
+                      return "I'm from validator";
+                    } else {
+                      return null;
+                    }
+                  },
+                  pinTheme: PinTheme(
+                      shape: PinCodeFieldShape.circle,
+                      fieldHeight: context.width / 6,
+                      fieldWidth: context.width / 6,
+                      activeFillColor: Colors.red,
+                      inactiveFillColor: Colors.grey,
+                      inactiveColor: Colors.black,
+                      activeColor: Colors.black,
+                      selectedFillColor: Colors.black,
+                      fieldOuterPadding:
+                          EdgeInsets.only(right: context.width / 30)),
 
-        const SizedBox(height: 50,),
+                  cursorColor: Colors.white,
+                  animationDuration: const Duration(milliseconds: 300),
+                  enableActiveFill: true,
+                  controller: cubit.pinCodeController,
+                  keyboardType: TextInputType.text,
+                  boxShadows: const [
+                    BoxShadow(
+                      offset: Offset(0, 1),
+                      color: Colors.black12,
+                      blurRadius: 10,
+                    )
+                  ],
+                  onCompleted: (v) {
+                    debugPrint("Completed");
+                  },
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ...List.generate(4, (index) => Container(
-                 width: 50,
-                 margin: const EdgeInsets.only(right: 10),
-                 child: TextFormField(
-                 decoration: const InputDecoration(
-                 enabledBorder: OutlineInputBorder(
-                 borderSide: BorderSide(
-                 color: Colors.blue
-                 )
-                 ),
-
-                 errorBorder:  OutlineInputBorder(
-                 borderSide: BorderSide(
-                 color: Colors.red
-                 )
-                 ), 
-                 ),
-                validator: validation().validat1,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller:TextEditingController() ,
-                maxLength: 1,
+                  onChanged: (value) {},
                 ),
-                )  )
-          ],
-        ),
-        
-        const SizedBox(height: 40,),
-
-        MaterialButton(onPressed: (){
-
+                IconButton(
+                    onPressed: cubit.onTapConfirm, icon: Icon(Icons.done))
+              ],
+            ),
+          );
         },
-          color: Colors.blue ,
-          minWidth: 100,
-          height: 50,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8)
-          ),
-          child: const Text('done',style: TextStyle(color: Colors.white),),
-        ),
-      ],
+      ),
     );
   }
 }

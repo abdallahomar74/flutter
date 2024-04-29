@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:section_project/features/login/view/page/login_page.dart';
 import 'package:section_project/features/onboarding/view/page/onboarding_page.dart';
@@ -10,6 +11,7 @@ void main() async{
  bool onBoarding = sharedPreferences.getBool('onboarding')??false;
   // ignore: non_constant_identifier_names
   MaterialApp MyApp = MaterialApp(
+     builder: DevicePreview.appBuilder,
     debugShowCheckedModeBanner: false,
     onGenerateRoute:Routes.onGenerateRoute ,
     onGenerateInitialRoutes:(_){return
@@ -17,7 +19,10 @@ void main() async{
     },
   );
 // home: onBoarding? const login_page():const Onboarding_page(),
-   runApp(MyApp);
+   runApp( DevicePreview(
+      enabled: true,
+      builder: (context) => MyApp, // Wrap your app
+    ),);
   
 }
 
