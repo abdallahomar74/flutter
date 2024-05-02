@@ -9,14 +9,13 @@ class FirebaseRepo extends P_Repositry {
 
   @override
   Future<List<UModel>> fetch_data() async {
-    /// https://firebase.flutter.dev/docs/firestore/usage
     return await FirebaseFirestore.instance.collection('users').get().then((QuerySnapshot querySnapshot) {
       return querySnapshot.docs.map((e) {
         final Map data = e.data() as Map;
 
         Map map = {
-          'name': data.containsKey('name') ? data['name'] : "XX",
-          'address': data.containsKey('adress') ? data['address'] : "XXXX",
+          'name': data.containsKey('name') ? data['name'] : "XXXXXX",
+          'address': data.containsKey('adress') ? data['address'] : "XXXXXX",
           'id': e.reference.id,
         };
         return UModel.fromJson(map);
