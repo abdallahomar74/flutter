@@ -54,7 +54,7 @@ class body_login extends StatelessWidget {
             children: [
               const SizedBox(width: 13,),
               TextButton(onPressed: (){
-               Navigator.pushNamed(context, 'forgetpass1');
+               Navigator.pushNamed(context, 'dashboard');
                 
               }, child:  Text('forget password?',style: context.Text1
               ))
