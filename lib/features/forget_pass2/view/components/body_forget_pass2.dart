@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:section_project/core/custom_textfield.dart';
+import 'package:section_project/core/extention_responsive&theme.dart';
+
 import 'package:section_project/features/verification/view/page/verification_page.dart';
 
 // ignore: camel_case_types
@@ -37,12 +39,12 @@ class body_forget_pass2 extends StatelessWidget {
          MaterialButton(onPressed: (){
            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const verification_page(),)); 
           },
-            color: Colors.greenAccent ,
+            color: context.button_color ,
             minWidth: 130,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20)
             ),
-            child: const Text('confirm',style: TextStyle(color: Colors.white),),
+            child:  Text('confirm',style: context.Text1,),
           ),  
       ],
 

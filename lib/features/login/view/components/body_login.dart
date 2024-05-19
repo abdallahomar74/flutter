@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:section_project/core/custom_textfield.dart';
+import 'package:section_project/core/extention_responsive&theme.dart';
+
 
 
 
@@ -41,7 +43,7 @@ class body_login extends StatelessWidget {
           MaterialButton(onPressed: (){
             
           },
-            color: Colors.greenAccent ,
+            color: context.button_color ,
             minWidth: 130,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20)
@@ -52,12 +54,9 @@ class body_login extends StatelessWidget {
             children: [
               const SizedBox(width: 13,),
               TextButton(onPressed: (){
-               Navigator.pushNamed(context, 'forgetpass1');
+               Navigator.pushNamed(context, 'dashboard');
                 
-              }, child: const Text('forget password?',style: TextStyle(
-                color: Colors.blue,
-                fontSize: 17,
-              ),
+              }, child:  Text('forget password?',style: context.Text1
               ))
             ],
           )

@@ -14,8 +14,10 @@ class UserPage extends StatelessWidget {
         builder: (context, state) {
           final UserCubit controller = context.read<UserCubit>();
           return Scaffold(
-            body: ListView.builder(itemBuilder: (context, index) {
-              return UserItem();
+            body: ListView.builder(
+              itemCount: controller.users?.length??0,
+              itemBuilder: (context, index) {
+              return UserItem(uModel: controller.users[index],);
             },)
           );
         },
