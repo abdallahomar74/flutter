@@ -18,7 +18,7 @@ void main() async{
       Routes.initroute;
     },
   );
-// home: onBoarding? const login_page():const Onboarding_page(),
+// home: onBoarding? const login_page():const Onboarding_page(),//
    runApp( DevicePreview(
       enabled: true,
       builder: (context) => MyApp, // Wrap your app
